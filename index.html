@@ -237,11 +237,9 @@ function startSearch() {
   var input, filter, ul, li, a, i;
   input = document.getElementById("searchQuery");
   filter = input.value.toUpperCase();
-  ul = document.getElementById("search");
-  li = ul.getElementsByTagName("a");
+  li = document.getElementsByClassName("game-link");
   for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("h1")[0];
-    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+    if (li[i].innerText.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = "";
     } else {
       li[i].style.display = "none";
@@ -316,7 +314,7 @@ function startSearch() {
 <br>
 
 <div id='live' class='chat'>
-<h3>Dead Chat :(</h3>
+<h3>Live Chat</h3>
 <button class="niceButton" onclick="fullPage(document.getElementById('thechat'))">Full Page</button>
 <p>Chat with everyone on the site!</p>
 <div id='chat'></div>
